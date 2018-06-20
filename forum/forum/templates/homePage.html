@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Forum
+{% endblock %}
+
+{% block body %}
+    <h2>Welcome to the Forum</h2>
+    <form class="textarea">
+        <input placeholder="Have something in mind?"></input>
+    </form>
+
+    {% for post in posts %}
+
+        </br><a style="color: red">{{ post[3] }} </a><a href="https://www.google.com" class="post-title">{{ post[1] }}</a></br>
+
+    {% endfor %}
+{% endblock %}

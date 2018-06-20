@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('hello');">Click me</button>
+    <div id="root"></div>
+    <script>
+        class Future {
+            constructor(funct){
+                const resolve = (req) => {
+                    this.resolve_func(req);
+                }
+                const reject = (req) => {
+                    this.reject_func(req);
+                }
+                funct(resolve, reject);
+            }
+            then(func){
+                this.resove_flunc = func;
+                return this
+            }
+            catch(func){
+                this.reject_func = func;
+                return this
+            }
+            static resolve(given_string){
+                const future = new Future((resolve, reject) => {
+                    setTimeout(() => resolve(1), 0);
+                });
+                return future;
+            }
+        }
+
+        const callApi = (url) => {
+            return new Promise((resolve, reject) => {
+                var request = new XMLHttpRequest();
+                request.open("GET", url);
+                request.send();
+                request.onreadystatechange = function() {
+                    if(request.status != 404) {
+                        if(request.readyState === 4) {
+                            resolve(request.response);
+                        }
+                    } else {
+                        reject("error");
+                    }
+                }
+            })
+        }
+
+        (async function() {
+            const resolve = (data) => {
+                document.getElementById("root").innerText = data;
+            }
+            
+            const reject = (data) => {
+                console.log(data);
+            }
+
+            try {
+                const data = await callApi('/about.html')
+                document.getElementById("root").innerText = data;
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+    </script>
+</body>
+</html>

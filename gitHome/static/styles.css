@@ -1,0 +1,24 @@
+body{
+    background-color: black;
+}
+
+login-div{
+    color: green;    
+}
+
+table, th, td{
+    border: "1px solid black";
+    padding: 5px;
+}
+
+table{
+    border-spacing: 15px;
+}
+
+.register-message{
+    color: red;
+}
+
+.green-message{
+    color: rgb(67, 236, 67);
+}

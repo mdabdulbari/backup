@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        Local Host
+    </title>
+</head>
+
+<body>
+    <div id="main"></div>
+    <script>
+
+        function layout(child) {
+            return '<a href="javascript:changeUrl(\'/\')">Home</a><a href="javascript:changeUrl(\'link\')">Link</a>' + child;
+        }
+
+        function home() {
+            return layout("<h1>Hello World</h1>");
+        }
+
+        function link() {
+            return layout("<h1>Hello Link</h1>");
+        }
+        function reloadPage(){
+
+            if (window.location.pathname === "/"){
+                render(home());
+            }
+            else if (window.location.pathname === "/link"){
+                render(link());
+            }
+        }
+        function render(text) {
+            document.getElementById("main").innerHTML = text;
+        }
+        function changeUrl(path){
+            history.pushState({}, "Something", path);
+            reloadPage();
+        }
+        reloadPage();
+        window.onpopstate = function() {
+            reloadPage();
+        };
+    </script>
+</body>
+
+</html>

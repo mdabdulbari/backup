@@ -1,0 +1,21 @@
+{% extends "plainheader.html" %}
+
+{% block title %}
+Log in
+{% endblock %}
+
+{% block body %}
+<div class="login-div">
+    <h5>Please provide your Email Address</h5>
+    <form action="{{ url_for('helpuser') }}" method="post">
+        <fieldset>
+        <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div><span class="register-message">{{ message }}</span></div>
+        <div><span class="green-message">{{ green_message }}</span></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+    </form>
+</div>
+{% endblock %}

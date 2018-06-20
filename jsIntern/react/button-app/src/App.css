@@ -1,0 +1,97 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.input-field {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.redButton, .greenButton, .boldButton, .italicButton{
+  padding: 5px;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 7px;
+  color: white;
+}
+
+.redButton {
+  background-color: red;
+}
+
+.greenButton {
+  background-color: green;
+}
+
+.italicButton {
+  font-style: italic;
+  background-color: darkgrey;
+}
+
+.boldButton {
+  font-style: bold;
+  background-color: darkgrey;
+}
+
+.redButton:hover{
+  background-color: darkred;
+}
+
+.greenButton:hover{
+  background-color: darkgreen;
+}
+
+.boldButton:hover, .italicButton:hover{
+  background-color: grey;
+}
+
+.fontSizeDiv {
+  padding: 20px;
+}
+
+.fontSizeButton{
+  padding: 3px 5px;
+  margin-left: 15px;
+  background-color: darkgrey;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 5px;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 7px;
+  color: black;
+  margin-left: 20px;
+}
+
+.name {
+  font-size: 30px;
+}
